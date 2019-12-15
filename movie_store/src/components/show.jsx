@@ -13,8 +13,6 @@ const Show = () => {
                 <div className="col-sm-7">
                     <Movie/>
                 </div>
-            
-
             </div>
           
         </div>

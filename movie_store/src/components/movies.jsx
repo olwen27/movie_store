@@ -2,11 +2,12 @@ import React, { useState,useContext} from "react";
 import uuid from 'uuid/v1'
 import AddMovie from "./addmovie";
 import {contextData} from './context'
+import Delete from "./delete";
 
 const Movie = () => {
 
-   const {movies} = useContext(contextData)
-    console.log(movies)
+   const {movies,dispatch} = useContext(contextData)
+  
 
     return ( 
         <div >
@@ -24,12 +25,12 @@ const Movie = () => {
             {movies.map(movie => 
             (<tr key={movie.id}>
             <td>{movie.title}</td>
-            <td>{movie.Author}</td>
-            <td>{movie.Genre}</td>
-            <td>{movie.Rate}</td>
-            <td>{movie.Stock}</td>
+            <td>{movie.author}</td>
+            <td>{movie.genre}</td>
+            <td>{movie.rate}</td>
+            <td>{movie.stock}</td>
             <td><i class="fa fa-heart-o"></i></td>
-            {/* <td><button onClick={()=> handledelete(movie)} className="btn btn-danger sm">Delete</button></td> */}
+            <td><button className="btn btn-danger btn-sm" onClick={() => dispatch({type:'delete', id: movie.id})}>Delete</button></td>
             </tr>
             ))}
                    </tbody>

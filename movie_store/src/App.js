@@ -6,6 +6,7 @@ import Nav from './components/Nav'
 import Genre from './components/Genre'
 import Show from './components/show';
 import Context from './components/context' 
+import AddMovie from './components/addmovie';
 
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
       <Nav/>
       <Switch>
       <Route path="/form" component={Show}/>
-      
+      <Route path="/addmovie" component={AddMovie}/>
       </Switch>
 
     </Context>
